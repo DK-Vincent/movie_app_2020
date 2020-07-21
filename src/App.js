@@ -1,4 +1,36 @@
 import React from 'react';
+
+class App extends React.Component{
+  state = {
+    isLoading: true,
+    movies: [],
+  }
+  
+  componentDidMount(){
+    // 영화 데이터가 로딩!
+    
+    setTimeout(()=>{
+      this.setState({isLoading : false});
+    }, 6000)
+  }
+
+  render(){
+    const {isLoading} = this.state;
+
+    return 
+    <div>
+        {isLoading ? 'Loading...' : 'We are ready'}
+    </div>;
+  }
+}
+
+
+export default App;
+
+
+
+/*
+import React from 'react';
 // App은 React.Component 속성을 상속 받음
 class App extends React.Component {
   //Class 일 뿐이라서 함수형태로 만들어주기 위해서 render() 함수를 사용 (JSX를 반환)
@@ -44,6 +76,15 @@ class App extends React.Component {
 }
 
 export default App;
+*/
+
+
+
+
+
+
+
+
 
 
 /*
